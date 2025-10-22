@@ -1,0 +1,120 @@
+/* === Reset & Layout === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Emilys Candy", serif;
+  color: #222;
+  background: #f4f4f4;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden; /* No scrolling */
+}
+
+/* === Title === */
+.title {
+  text-align: center;
+  font-family: "Honk", system-ui;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-top: 2vh;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+/* === Game Area === */
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  width: 100%;
+  gap: 5vh;
+}
+
+/* === Player and Computer Panels === */
+.player, .computer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.candy {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 2vh;
+  color: #444;
+}
+
+/* === Buttons Layout === */
+.img-block, .img-blockC {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+}
+
+/* === Game Buttons === */
+.image, .imageC {
+  width: clamp(100px, 12vw, 140px);
+  height: clamp(100px, 12vw, 140px);
+  border-radius: 15px;
+  background: white;
+  border: 2px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.image:hover {
+  border-color: #999;
+  background: #f0f0f0;
+}
+
+.image:active {
+  transform: scale(0.95);
+}
+
+/* === Icons === */
+.actimg, .taunt {
+  width: 60%;
+  max-width: 100px;
+}
+
+/* === Divider === */
+hr {
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+  width: 80%;
+  margin: 1vh 0;
+}
+
+/* === Responsive Tweaks === */
+@media (max-width: 768px) {
+  body {
+    justify-content: flex-start;
+    gap: 2vh;
+  }
+  .main {
+    height: auto;
+    gap: 3vh;
+  }
+  .img-block, .img-blockC {
+    gap: 4vw;
+  }
+}
+
+.image.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
